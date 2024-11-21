@@ -15,8 +15,7 @@ class _BoardPagesState extends State<BoardPages> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(
-        (timeStamp) => context.read<BoardCubit>().fetchTasks());
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) => context.read<BoardCubit>().fetchTasks());
   }
 
   @override
@@ -68,7 +67,6 @@ class _BoardPagesState extends State<BoardPages> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           addTaskDialog();
-
         },
         child: const Icon(Icons.add),
       ),
@@ -80,7 +78,8 @@ class _BoardPagesState extends State<BoardPages> {
     showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog.adaptive(
+          return AlertDialog(
+            // Replace with AlertDialog
             actions: [
               TextButton(
                 onPressed: () {
